@@ -1,0 +1,27 @@
+  
+  <div class="comment-list">
+    <div class="card">
+        <h5>Commenti:</h5>
+        <div *ngIf="comments.length === 0"><p class="no-comments">Non ci sono ancora commenti.</p></div>
+        <div *ngFor="let comment of comments">
+        <div class="card-body">
+            
+            <div><img src="https://icon-library.com/images/user-profile-icon/user-profile-icon-15.jpg" style="width: 40px"></div> <div style="margin-left: 10px;"><strong>{{ comment.name }}</strong> ha commentato:<br>
+     <br> </div> 
+        </div><div class="commentarea">{{ comment.message }}</div></div>
+      </div>
+  </div>
+    
+    
+  
+  <div class="comment-form">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Username:</label>
+      <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Inserisci il tuo nome" [(ngModel)]="commentName">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label" >Commento</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"[(ngModel)]="commentMessage"></textarea>
+      <button (click)="addComment()" class="btn btn-dark">Invia Commento</button>
+    </div>
+  </div>

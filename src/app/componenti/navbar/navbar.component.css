@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Mohave:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,500,700');
+
+nav{
+    
+    font-size: 1.2em;
+    font-family: 'Raleway', sans-serif;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+}
+
+.dropdown{
+    display: flex;
+}
+
+.dropdown img {
+    height: 20px;
+}
+
+.navbar-nav{
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+.container-fluid{
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+.collapse{
+    display: initial;
+    flex-basis: auto;
+}
+
+.nav-item{
+    transition: color .2s;
+}
+
+a:hover, .nav-item:hover{
+    color: rgb(12, 12, 124);
+    cursor: pointer;
+}
+
+img#logo:hover{
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    #logo {
+        width: 0;
+        visibility: hidden;
+      }
+      .nav-link{ margin-inline: 10px;}
+    
+}

@@ -1,0 +1,12 @@
+<div class="wrapper">
+
+    <form class="form-signin"> <h1>Registrati:</h1>
+       <input [(ngModel)]="username" type="text" class="form-control" name="username" placeholder="username" /> 
+      <input [(ngModel)]="registerEmail" type="email" class="form-control" name="email" placeholder="email address" />
+      <input [(ngModel)]="registerPassword" type="password" class="form-control" name="password" placeholder="password" />
+      
+      <button class="btn btn-dark" type="button" (click)="register()">Registrati</button>    
+    </form>
+    <p>Sei registrato?</p>
+    <button routerLink="/login" class="btn btn-dark">Login</button>
+  </div>

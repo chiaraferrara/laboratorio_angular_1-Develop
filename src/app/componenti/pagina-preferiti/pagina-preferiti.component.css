@@ -1,0 +1,16 @@
+.card-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.card {
+    margin-top: 2px;
+    width: 15rem;
+  }
+
+  .cicloFor {
+    margin-inline: 0.6rem;  
+    margin-top: 1rem;
+  }
+  

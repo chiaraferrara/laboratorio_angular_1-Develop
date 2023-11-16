@@ -1,0 +1,47 @@
+.mb-3{
+    margin: auto;
+    width: 70%;
+
+}
+
+
+.card{
+    margin: auto;
+    width: 70%;
+    border: transparent;
+}
+
+h5{
+    font-size:2em;
+}
+
+.no-comments{
+    font-size: 1.2em;
+}
+
+strong{
+    font-size: 1.2em;
+}
+
+.card-body{
+    padding:0;
+    display:flex;
+    flex-flow: row wrap;
+    align-content: space-between;
+    justify-content: flex-start;
+    align-items: baseline;
+}
+
+.comment-list .card-body .comment-text {
+    margin-left: 10px;
+    flex-grow: 1;
+  }
+
+  .commentarea{
+    margin-left:3.4em;
+    padding-top: 0;
+  }
+
+  .comment-form{
+    margin-top: 3em;
+  }

@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css2?family=Bayon&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito|Playfair+Display:400,700');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  color: black;
+}
+
+.material-symbols-outlined-preferito {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  color: red;
+}
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+.card-title {
+  font-size: 24px;
+}
+
+.divider_2 {
+  text-align: center; /* Center-align the content */
+}
+
+.divider_2 h3 {
+  margin: 0; 
+  padding: 0;
+  margin-top: 40px;
+  padding: 0;
+  font-weight: bolder;
+  font-variant: small-caps;
+}
+
+.divider {
+  width: 70%; 
+  box-shadow: -3px -1px 5px rgba(0, 0, 0, 0.281);
+  height: 1px; 
+  background-color: #4949498e; 
+  margin: 0px auto; 
+  
+}
+
+.cicloFor {
+  margin-inline: 0.6rem;
+
+  margin-top: 1rem;
+}
+
+#miPiace {
+  width: 2rem;
+}
+
+.card-container {
+  margin-top: 3%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  justify-content: center;
+  padding-inline: 10%;
+}
+
+.card {
+  margin-top: 2px;
+  width: 20rem;
+  box-shadow: 0px 1.2px 2.2px rgba(0, 0, 0, 0.039),
+    0px 2.8px 5.3px rgba(0, 0, 0, 0.046), 0px 5.1px 10px rgba(0, 0, 0, 0.049),
+    0px 9.9px 17.9px rgba(0, 0, 0, 0.051),
+    0px 21.9px 33.4px rgba(0, 0, 0, 0.055), 0px 50px 80px rgba(0, 0, 0, 0.06);
+}
+
+/* BANNER CON MUSICAAA */
+
+@import url(https://fonts.googleapis.com/css?family=Oswald:400);
+
+.banner {
+  position: relative;
+  z-index: 1;
+  margin: 80px auto;
+  width: 330px;
+}
+
+.banner .line {
+  margin: 0 0 10px;
+  width: 100%;
+  height: 78px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3em;
+  line-height: 78px;
+  transform: skew(0, -15deg);
+}
+/* fancy banner */
+.banner-container {
+  width: 100%;
+  margin-top: 2%;
+  max-width: 1200px;
+  position: relative;
+  margin-inline: auto;
+}
+
+.bkgd-image-style {
+  position: relative;
+  width: 100%;
+}
+
+.video-wrapper {
+  width: 49.6%;
+  position: absolute;
+  top: 0px;
+  height: auto;
+}
+
+a.play-pause-button {
+  width: 50px;
+  height: 50px;
+}
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+
+  iframe,
+  object,
+  embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  &:hover + .video-control {
+    opacity: 0.5;
+  }
+
+  iframe #player .controls-wrapper {
+    display: none;
+  }
+}
+
+/* video button style */
+
+.video-control {
+  opacity: 0;
+  position: absolute;
+  width: 22.5%;
+  height: 40%;
+  top: 31%;
+  left: 38%;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    max-width: 131px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: block;
+    position: absolute;
+  }
+
+  &:before {
+    background-image: url("http://joekang.co/assets/image-hosting/video-buttons-black.png");
+    background-position: 53% 98%;
+    background-size: 332%;
+
+    /*content: "\ea1c";*/
+  }
+
+  &:after {
+    background-image: url("http://joekang.co/assets/image-hosting/video-buttons-black.png");
+    background-position: -292px -292px;
+    background-size: 332%;
+
+    /*content: "\ea1d";*/
+  }
+
+  &.paused:after,
+  &.playing:before {
+    opacity: 0;
+  }
+}
+
+.video-control-show {
+  opacity: 0.5;
+}
+
+/* audio button style */
+
+.audio-control {
+  opacity: 1;
+  position: absolute;
+  width: 6%;
+  height: 9%;
+  bottom: 3%;
+  left: 2%;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:before,
+  &:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    max-width: 36px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: block;
+  }
+
+  &:before {
+    background-image: url("http://joekang.co/assets/image-hosting/video-buttons-black.png");
+    background-position: -1% -2%;
+    background-size: 254%;
+  }
+
+  &:after {
+    background-image: url("http://joekang.co/assets/image-hosting/video-buttons-black.png");
+    background-position: 69% -1%;
+    background-size: 254%;
+  }
+
+  &.unmuted:after,
+  &.muted:before {
+    opacity: 0;
+  }
+}
+
+/* default style */
+
+.title-wrapper {
+  text-align: center;
+  margin: 3% 0;
+  font-size: 2.5vw;
+
+  span {
+    color: #fff;
+  }
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 55%;
+  width: auto;
+  margin-top: -1.875rem;
+  padding: 1rem;
+  color: #232323;
+  font-weight: bold;
+  font-size: 3rem;
+  border-radius: 3px;
+  user-select: none;
+  transition: 0.4s;
+  border: 0px transparent;
+}
+
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: #1c4b82;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .prev, .next{
+    font-size: 1rem;
+    width: min-content;
+  }
+}
+
+
+/* VINILE GIF */
+.containercard{
+  width: 100%;
+  height: fit-content;
+  background-color: #ffffff;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 2%;
+  justify-content: center;
+}
+
+.news{
+  color: rgb(0, 0, 0);
+  text-align: right;
+background: rgb(251,251,251);
+
+width: 6%;
+  font-family: 'Oswald', sans-serif;
+  font-size: 25px;
+  margin:1%;
+  text-shadow: 0px -20px #d5d1d1;
+}
+.cardgif {
+  background: rgb(255,255,255);
+background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 2%, rgba(244,244,244,1) 2%, rgba(249,249,249,1) 89%);
+  width: 200px;
+  height: 200px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+  box-shadow: 0px 10px 11px 0px rgba(0, 0, 0, 0.178);
+}
+
+
+
+.album-cover {
+  max-width: 100%;
+  position: relative;
+  height:fit-content;
+  z-index: 10;
+  margin-left: +130px;
+  margin-top: -100px;
+}
+
+.vinylgif {
+  
+  margin-top: -195px;
+  animation: spin 2s linear infinite;
+  position: relative;
+  margin-left: +200px;
+  max-width: 170px;
+  max-height: 170px;
+  text-shadow: 2px 2px solid black;
+}
+.newpost{
+  width: 20%;
+}
+
+h1,h2,h3,h4,h6{
+  font-family: 'Yusei Magic', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .news{
+    color: transparent;
+    text-align: right;
+    background: rgb(251,251,251);
+    background: transparent;
+    width: 0%;
+    text-shadow: none;
+  }
+
+  .cardgif{
+    max-width: fit-content;
+    margin-inline: 0;
+    margin-top: 10px;
+    width: 200px;
+  }
+
+  .album-cover {
+    max-width: 100%;
+    position: relative;
+    height:fit-content;
+    z-index: 10;
+    margin-left: +109px;
+    margin-top: -110px;
+  }
+
+  .vinylgif {
+    margin-top: -200px;
+    animation: spin 2s linear infinite;
+    position: relative;
+    margin-left: +180px;
+    max-width: 170px;
+    max-height: 170px;
+    text-shadow: 2px 2px solid black;
+  }
+  .newpost{
+    visibility: none;
+    margin: 0;
+    width: 100%;
+  }
+
+  .containercard{
+    justify-content: left;
+  }
+}
+
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+
+}

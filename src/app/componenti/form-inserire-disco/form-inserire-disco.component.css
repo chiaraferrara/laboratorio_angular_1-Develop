@@ -1,0 +1,11 @@
+#form-info-disco {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+
+}
+
+.commentarea {
+	margin-left: 3.4em;
+	padding-top: 0;
+}

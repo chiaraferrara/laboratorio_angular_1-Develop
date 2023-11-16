@@ -1,0 +1,32 @@
+.card-img-top{
+    border-radius: 100%;
+    width: 80px;
+    border: 2px solid #54595d;
+}
+.card{
+    margin-top: 3px;
+    margin-top: 4%;
+    margin-inline: auto;
+    width: 84em;
+    display: flex;
+    flex-flow: row wrap;
+}
+.card-title{
+    font-size: 20px;
+}
+
+.col-md-4{
+    text-align: center;
+}
+
+.btn btn-light {
+    
+    width: 70%;
+    height: 70%;
+    margin-inline: auto;
+    
+}
+
+.upload{
+    width: 20px;
+}

@@ -1,0 +1,47 @@
+<!-- FEATURE Preview: al solo inserito del testo/url si potrebbe fare che l'album nella ""card"" della PaginaInserisciDisco, si aggiorni [[[ !!!! - MAGARI, solo dopo che si è finito di scrivere (¿ setTimeOut di 3 sec ?)  e  si è passati ad un'altra casella di INPUT ]]] -->
+
+<div id="form-info-disco" class="commentarea">
+	<!-- input url copertina -->
+	<mat-form-field appearance="fill">
+		<mat-label>Copertina Album URL</mat-label>
+		<input [(ngModel)]="song.coverUrl" matInput placeholder="https:/img.album.cover.png/" />
+		<mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+		<mat-hint>Dammi un link</mat-hint>
+	</mat-form-field>
+
+	<!-- input Titolo Album -->
+	<mat-form-field appearance="fill">
+		<mat-label >Titolo Album</mat-label>
+		<input [(ngModel)]="song.title" matInput placeholder="Olotit" />
+
+		<mat-hint>Dammi un titolo</mat-hint>
+	</mat-form-field>
+
+	<!-- input Cantante Album -->
+	<mat-form-field appearance="fill">
+		<mat-label>Cantante</mat-label>
+		<input [(ngModel)]="song.artist" matInput placeholder="Aurora" />
+
+		<mat-hint>cantata dal mitico...</mat-hint>		
+	</mat-form-field>
+
+
+	<mat-form-field appearance="fill">
+		<mat-label>Genre</mat-label>
+		<input [(ngModel)]="song.genre" matInput placeholder="Metal" />
+
+		<mat-hint>il genere...</mat-hint>		
+	</mat-form-field>
+
+<button (click)="addSong()" class="btn btn-dark">Aggiungi Canzone</button>
+	<!-- Non son solo Canzonette, non mettetemi alle strette 🎶 -->
+
+	<!-- input Cantante Album -->
+	<!-- CANZONE & DURATA: forse questo ha bisogno  diun input con prefisso, come quello telefonico che si scriver in due porzioni divise dello stesso input, come <347> <12 34 567> di un numero di telefono    -->
+	<!-- <mat-form-field appearance="fill">
+		<mat-label>Canzone e Durata</mat-label>
+		<input [(ngModel)]="song.s" matInput placeholder="N.: Sono Fuori Di Testa  ----  4:00" />
+
+		<mat-hint>all'indice canzone ci penserò io ;-)</mat-hint>
+	</mat-form-field> -->
+</div>
