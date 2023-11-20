@@ -37,9 +37,6 @@ Il progetto è stato implementato utilizzando Angular come framework principale.
 3. **Avvio dell'Applicazione:**
    - Eseguire `ng serve` per avviare l'applicazione. Navigare su `http://localhost:4200/` per visualizzare l'applicazione nel browser.
 
-## Contributi e Segnalazione di Problemi
-Siamo aperti a contributi e miglioramenti. In caso di problemi o suggerimenti, si prega di aprire una segnalazione su GitHub.
-
 ## Autori
 
 Progetto realizzato da Chiara Ferrara, Gabriele di Grazia, Alberto Cangialosi, Gianmarco Culò, Massimiliano Corsini, Fatima Cangialosi e Stefano Cammarata.
