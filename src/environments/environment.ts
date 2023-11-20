@@ -6,12 +6,12 @@
 export const environment = {
     production:false,
     firebaseConfig : {
-        apiKey: "AIzaSyAnkyRiixwQjdT4lDCLeRC4KuTEmq_drqs",
-        authDomain: "vinili-ddd9c.firebaseapp.com",
-        projectId: "vinili-ddd9c",
-        storageBucket: "vinili-ddd9c.appspot.com",
-        messagingSenderId: "247453813018",
-        appId: "1:247453813018:web:558a67179fe6e11720c4a3"
+      apiKey: "AIzaSyAgsPf8ri_L-QTFX6MJOy_IHl_SHw0FG3c",
+  authDomain: "vinili-165f8.firebaseapp.com",
+  projectId: "vinili-165f8",
+  storageBucket: "vinili-165f8.appspot.com",
+  messagingSenderId: "1093712895302",
+  appId: "1:1093712895302:web:4c2b2847422aa2a997d947"
       }
       
 };
