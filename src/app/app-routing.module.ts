@@ -9,6 +9,7 @@ import { PageInsertDiskComponent } from "./componenti/page-insert-disk/page-inse
 import { LoginMaterialComponent } from "./componenti/login-material/login-material.component";
 import { DashboardComponent } from "./componenti/dashboard/dashboard.component";
 import { RegistrazioneComponent } from "./componenti/registrazione/registrazione.component";
+import { AboutusComponent } from "./componenti/aboutus/aboutus.component";
 // import { AuthGuard } from "./auth.guard";
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
 	{ path: 'dashboard', component: DashboardComponent},
 	{ path: "add-disk", component: PageInsertDiskComponent },
 	{ path: "registrati", component: RegistrazioneComponent},
-	{ path: 'dashboard', component: DashboardComponent},	
+	{ path: 'dashboard', component: DashboardComponent},
+	{ path: 'about', component: AboutusComponent},	
 	// QUESTA WILDCARD DEVE ESSERE L'ULTIMA DI DEFAULT
 	{ path: "**", component: PageNotFoundComponent },
 ];

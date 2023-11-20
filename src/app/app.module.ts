@@ -26,6 +26,7 @@ import { FormInserireDiscoComponent } from "./componenti/form-inserire-disco/for
 import { FormsModule } from "@angular/forms";
 import { UserService } from "./servizi/user.service";
 import { ProfilePictureComponent } from './componenti/profile-picture/profile-picture.component';
+import { AboutusComponent } from './componenti/aboutus/aboutus.component';
 
 
 @NgModule({
@@ -35,7 +36,7 @@ import { ProfilePictureComponent } from './componenti/profile-picture/profile-pi
 		PageNotFoundComponent,
 		NavbarComponent,
 		CaroselloComponent, PaginaDiscoComponent, FooterComponent, PaginaPreferitiComponent,
-		CommentiComponent, RegistrazioneComponent, LoginMaterialComponent, PageInsertDiskComponent, DashboardComponent, ProfilePictureComponent
+		CommentiComponent, RegistrazioneComponent, LoginMaterialComponent, PageInsertDiskComponent, DashboardComponent, ProfilePictureComponent, AboutusComponent
 	],
 	imports: [
 		BrowserModule,
