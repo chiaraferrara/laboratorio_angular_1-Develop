@@ -12,21 +12,21 @@ import { UserService } from 'src/app/servizi/user.service';
 
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { map } from "rxjs/operators";
+import { Subject } from 'rxjs';
 
-export const sendTitle = new BehaviorSubject<string>('');
-sendTitle.asObservable();
+
 @Component({
   selector: 'app-tab',
   templateUrl: './tab.component.html',
   styleUrls: ['./tab.component.css'],
-  standalone: true,
-  imports: [MatTabsModule, CommonModule, MatDividerModule, MatPaginatorModule],
 })
 
 
 
 export class TabComponent implements OnInit {
-  @Output() genreSelected = new EventEmitter<string>();
+  
+  // sendTitle = new BehaviorSubject<string>('');
+  // @Output() genreSelected = new EventEmitter<string>();
   favoriteAlbums: any[] = [];
   album: any[] = [];
   albumList: any[] = [];
@@ -39,6 +39,10 @@ export class TabComponent implements OnInit {
   userEmail: string = '';
   newFavoriteAlbums: string[] = [];
   lastAlbum: any;
+
+  private sendID = new Subject<string>();
+  sendID$ = this.sendID.asObservable();
+
   constructor(
     // public servizio : AlbumsService 
     public router: Router,
@@ -130,13 +134,21 @@ export class TabComponent implements OnInit {
   
 
 
-  sendInfo(title: string) {
-    console.log("Titolo passato a sendTitle:", title);
-    sendTitle.next(title);
-    this.router.navigateByUrl('page');
+  // sendInfo(title: string) {
+  //   console.log("Titolo passato a sendTitle:", title);
+  //   sendTitle.next(title);
+  //   this.router.navigateByUrl('page');
 
+  // }
+
+  @Output() albumSelected = new EventEmitter<string>();
+
+  sendInfo(albumId: string) {
+    this.albumSelected.emit(albumId);
+    console.log("ID passato a sendID:", albumId);
+    this.router.navigateByUrl(`/album/${albumId}`);
   }
-
+  
   paginazione() {
     const indiceInizio = this.paginaCorrente * this.itemsPerPage; //rappresenta l'indice della pag. corrente = 0 e numero di album da visualizzare = 6
     const indiceFine = indiceInizio + this.itemsPerPage;

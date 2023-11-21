@@ -4,7 +4,7 @@
 />
 
 <mat-tab-group>
-  <mat-tab label="ALL">
+  <mat-tab  label="ALL">
     <div class="card-container">
       <div *ngFor="let disco of albumPaginati" class="cicloFor">
         <div class="card">
@@ -20,7 +20,8 @@
           </ul>
           <div class="card-body">
             <button
-              (click)="sendInfo(disco.title)"
+            [routerLink]="['/album', disco.id]"
+              (click)="sendInfo(disco.id)"
               type="button"
               class="btn btn-light"
             >
@@ -53,6 +54,52 @@
       &#10095;
     </button>
   </mat-tab>
+  <mat-tab label="METAL">
+    <div class="card-container">
+      <div *ngFor="let disco of albumList" class="cicloFor">
+        <div *ngIf="disco.genre == 'METAL'">
+          <div class="card">
+            <img [attr.src]="disco.coverUrl" class="card-img-top" />
+            <div class="card-body">
+              <h5 class="card-title">{{ disco.title | uppercase }}</h5>
+              <p class="card-text">
+                {{ disco.artist | uppercase }}
+              </p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">{{ disco.genre | uppercase }}</li>
+            </ul>
+            <div class="card-body">
+              <button
+                (click)="sendInfo(disco.id)"
+                type="button"
+                class="btn btn-light"
+              >
+                MORE INFO
+              </button>
+
+              <button
+                (click)="onAggiungiAiPreferitiClick(disco.id)"
+                type="button"
+                class="btn"
+              >
+                <span
+                  class="material-symbols-outlined"
+                  [ngClass]="{
+                    'material-symbols-outlined-preferito':
+                      this.disco.isFavourite
+                  }"
+                >
+                favorite
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+
 
   <mat-tab label="ROCK">
     <div class="card-container">
@@ -71,7 +118,7 @@
             </ul>
             <div class="card-body">
               <button
-                (click)="sendInfo(disco.title)"
+                (click)="sendInfo(disco.id)"
                 type="button"
                 class="btn btn-light"
               >
@@ -117,7 +164,7 @@
             </ul>
             <div class="card-body">
               <button
-                (click)="sendInfo(disco.title)"
+                (click)="sendInfo(disco.id)"
                 type="button"
                 class="btn btn-light"
               >
@@ -163,7 +210,7 @@
             </ul>
             <div class="card-body">
               <button
-                (click)="sendInfo(disco.title)"
+                (click)="sendInfo(disco.id)"
                 type="button"
                 class="btn btn-light"
               >

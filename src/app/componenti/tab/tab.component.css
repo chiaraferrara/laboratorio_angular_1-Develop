@@ -28,6 +28,10 @@
   margin: 8px 8px 8px 0;
 }
 
+.mat-tab{
+  width: 50%;
+}
+
 .example-flex-container {
   display: flex;
   justify-content: space-between;
@@ -393,7 +397,6 @@ h1,h2,h3,h4,h6{
     margin-inline: 0;
     margin-top: 10px;
     width: 200px;
-    height: ;
   }
 
   .album-cover {

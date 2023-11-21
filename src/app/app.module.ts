@@ -1,6 +1,5 @@
 
 import { BrowserModule } from "@angular/platform-browser";
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -27,6 +26,7 @@ import { FormsModule } from "@angular/forms";
 import { UserService } from "./servizi/user.service";
 import { ProfilePictureComponent } from './componenti/profile-picture/profile-picture.component';
 import { AboutusComponent } from './componenti/aboutus/aboutus.component';
+import { MatTabsModule } from "@angular/material/tabs";
 
 
 @NgModule({
@@ -36,13 +36,13 @@ import { AboutusComponent } from './componenti/aboutus/aboutus.component';
 		PageNotFoundComponent,
 		NavbarComponent,
 		CaroselloComponent, PaginaDiscoComponent, FooterComponent, PaginaPreferitiComponent,
-		CommentiComponent, RegistrazioneComponent, LoginMaterialComponent, PageInsertDiskComponent, DashboardComponent, ProfilePictureComponent, AboutusComponent
+		CommentiComponent, RegistrazioneComponent, LoginMaterialComponent, PageInsertDiskComponent, DashboardComponent, ProfilePictureComponent, AboutusComponent,TabComponent,
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
 		BrowserAnimationsModule,
-		TabComponent,
+		MatTabsModule,
 		AppRoutingModule,
 		FormInserireDiscoComponent,
 		BrowserModule,

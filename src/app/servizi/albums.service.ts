@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { FirebaseService } from './firebase.service';
 import { AngularFirestore  } from '@angular/fire/compat/firestore';
 
@@ -23,9 +23,12 @@ export class AlbumsService {
   direction: number = 0;
   currentGenre: String = 'All';
 
-  albums !: any[];
+  public albums !: any[];
 
  
+  getAlbumDetails(albumId: string): Observable<any> {
+    return this.afirestore.collection('albums').doc(albumId).valueChanges();
+  }
 
   getFavouriteAlbums(uid: string) {
     return this.afirestore.collection(`users/${uid}/favorites`).valueChanges();

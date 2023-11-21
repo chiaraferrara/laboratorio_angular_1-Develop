@@ -15,12 +15,11 @@ import { AboutusComponent } from "./componenti/aboutus/aboutus.component";
 const routes: Routes = [
 	{ path: "", component: TabComponent, pathMatch: "full"  },
 	{ path: "preferiti", component: PaginaPreferitiComponent},
-	{ path: "page" , component: PaginaDiscoComponent},
+	{ path: 'album', component: PaginaDiscoComponent },
 	{ path: "login", component: LoginMaterialComponent},
 	{ path: 'dashboard', component: DashboardComponent},
 	{ path: "add-disk", component: PageInsertDiskComponent },
 	{ path: "registrati", component: RegistrazioneComponent},
-	{ path: 'dashboard', component: DashboardComponent},
 	{ path: 'about', component: AboutusComponent},	
 	// QUESTA WILDCARD DEVE ESSERE L'ULTIMA DI DEFAULT
 	{ path: "**", component: PageNotFoundComponent },

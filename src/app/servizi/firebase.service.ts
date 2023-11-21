@@ -152,4 +152,10 @@ getFavoriteAlbumsByIds(albumIds: number[]): Observable<any[]> {
   );
 }
 
+getAlbumsByGenre(genre: string): Observable<any[]> {
+  return this.firestore
+    .collection('albums', (ref) => ref.where('genre', '==', genre))
+    .valueChanges();
+}
+
 }
