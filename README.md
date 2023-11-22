@@ -1,3 +1,7 @@
+# i Vinili di Maurizio
+
+## Descrizione del Progetto
+Il progetto "I Vinili di Maurizio" è stato sviluppato come parte del modulo Angular presso la Steve Jobs Academy. Si tratta di un'applicazione web che consente agli utenti di gestire una collezione virtuale di dischi in vinile. L'applicazione offre funzionalità di registrazione, accesso, aggiunta di dischi alla collezione, e una dashboard per la gestione delle informazioni degli utenti.
 <!-- vscode-markdown-toc -->
 * 1. [Descrizione del Progetto](#DescrizionedelProgetto)
 * 2. [Tecnologie Utilizzate](#TecnologieUtilizzate)
@@ -14,10 +18,10 @@
 ##  1. <a name='DescrizionedelProgetto'></a>Descrizione del Progetto
 Il progetto "I Vinili di Maurizio" è stato sviluppato come parte del modulo Angular presso la Steve Jobs Academy. Si tratta di un'applicazione web che consente agli utenti di gestire una collezione virtuale di dischi in vinile. L'applicazione offre funzionalità di registrazione, accesso, aggiunta di dischi alla collezione, e una dashboard per la gestione delle informazioni degli utenti.
 
-##  2. <a name='TecnologieUtilizzate'></a>Tecnologie Utilizzate
+## Tecnologie Utilizzate
 Il progetto è stato implementato utilizzando Angular come framework principale. Abbiamo integrato Firebase per gestire l'archiviazione dei dati, consentendo agli utenti di aggiungere e gestire la propria collezione di dischi. Per l'interfaccia utente, abbiamo sfruttato i componenti Material di Angular, combinati con le librerie di stile Bootstrap e Tailwind per un'esperienza visiva accattivante e responsive.
 
-##  3. <a name='FunzionalitPrincipali'></a>Funzionalità Principali
+## Funzionalità Principali
 1. **Registrazione e Login:**
    - Gli utenti possono registrarsi e accedere all'applicazione in modo sicuro.
    
@@ -36,7 +40,7 @@ Il progetto è stato implementato utilizzando Angular come framework principale.
    - Utilizzo di componenti Material di Angular per una UI coerente e ben progettata.
    - Stile arricchito attraverso l'integrazione di Bootstrap e Tailwind per un design accattivante e responsive.
 
-##  4. <a name='ComeIniziare'></a>Come Iniziare
+## Come Iniziare
 1. **Installazione:**
    - Assicurarsi di avere [Node.js e npm installati][1].
    - Eseguire `npm install` per installare le dipendenze del progetto.
@@ -48,7 +52,7 @@ Il progetto è stato implementato utilizzando Angular come framework principale.
 3. **Avvio dell'Applicazione:**
    - Eseguire `ng serve` per avviare l'applicazione. Navigare su `http://localhost:4200/` per visualizzare l'applicazione nel browser.
 
-##  5. <a name='Autori'></a>Autori
+## Autori
 
 Progetto realizzato da Chiara Ferrara, Gabriele di Grazia, Alberto Cangialosi, Gianmarco Culò, Massimiliano Corsini, Fatima Cangialosi e Stefano Cammarata.
 
