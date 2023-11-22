@@ -6,6 +6,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { UserService } from './user.service';
 import { User } from '../user';
 import { map } from 'rxjs/operators';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,7 @@ export class FirebaseService {
 
   constructor(private userService : UserService, 
     private firebaseAuth: AngularFireAuth, 
+    private db: AngularFireDatabase,
     private router : Router, 
     private firestore : AngularFirestore, 
     private afAuth: AngularFireAuth ) { 
@@ -97,6 +99,10 @@ getAlbums(): Observable<any[]> {
   return this.firestore.collection('albums').valueChanges();
 }
     
+
+getAlbumDetails(albumId: string) {
+  return this.db.object(`/albums/${albumId}`).valueChanges();
+}
 
   logout() {
     this.firebaseAuth.signOut().then( () => {

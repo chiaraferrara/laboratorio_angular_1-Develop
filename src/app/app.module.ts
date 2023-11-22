@@ -1,5 +1,6 @@
 
 import { BrowserModule } from "@angular/platform-browser";
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -36,7 +37,7 @@ import { MatTabsModule } from "@angular/material/tabs";
 		PageNotFoundComponent,
 		NavbarComponent,
 		CaroselloComponent, PaginaDiscoComponent, FooterComponent, PaginaPreferitiComponent,
-		CommentiComponent, RegistrazioneComponent, LoginMaterialComponent, PageInsertDiskComponent, DashboardComponent, ProfilePictureComponent, AboutusComponent,TabComponent,
+		CommentiComponent, RegistrazioneComponent, LoginMaterialComponent, PageInsertDiskComponent, DashboardComponent, ProfilePictureComponent, AboutusComponent,TabComponent
 	],
 	imports: [
 		BrowserModule,
@@ -51,6 +52,6 @@ import { MatTabsModule } from "@angular/material/tabs";
 		AngularFirestoreModule,
 		FormsModule
 	],
-	providers: [AngularFirestore, UserService],
+	providers: [AngularFirestore, UserService, TabComponent],
 })
 export class AppModule { }

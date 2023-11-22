@@ -1,6 +1,7 @@
 import { Component} from '@angular/core';
 import { FirebaseService } from './servizi/firebase.service';
 import { Router } from '@angular/router';
+import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {  
+  valoreDellId!: number;
 	isSignedIn = true;
   isAuthenticated: boolean = false;
   title = 'ViniliMaurizio';
@@ -18,7 +20,7 @@ export class AppComponent {
     });
   }
    
-
+  @Input() albumId!: string;
   genreSelected: string = 'all';
 
   updateSelectedGenre(newGenre: any) {

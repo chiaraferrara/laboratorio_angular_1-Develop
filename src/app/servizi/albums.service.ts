@@ -26,8 +26,39 @@ export class AlbumsService {
   public albums !: any[];
 
  
-  getAlbumDetails(albumId: string): Observable<any> {
-    return this.afirestore.collection('albums').doc(albumId).valueChanges();
+  getAlbumDetail(albumId: string): Observable<any> {
+     return this.afirestore.collection('albums').doc(albumId).valueChanges();
+ }
+
+
+//  async getAlbumDetails(albumId : string): Promise<any> {
+//   try {
+//     const albumDetails = await this.afirestore.collection('albums').doc(albumId).valueChanges().toPromise();
+//     console.log("Album details received:", albumDetails);
+//     return albumDetails;
+//   } catch (error) {
+//     console.error("Error while retrieving album details:", error);
+//     throw error;
+//   }
+// }
+
+getAlbumDetails(albumId: string): Observable<any> {
+  return this.afirestore.collection('albums').doc(albumId).valueChanges();
+}
+
+getAllAlbums(): Observable<any[]> {
+  return this.afirestore.collection('albums').valueChanges();
+}
+
+// TENTATIVO
+selectedAlbum: any;
+
+  setSelectedAlbum(album: any) {
+    this.selectedAlbum = album;
+  }
+
+  getSelectedAlbum() {
+    return this.selectedAlbum;
   }
 
   getFavouriteAlbums(uid: string) {
@@ -71,5 +102,7 @@ export class AlbumsService {
     this.currentSlideIndex =
       (this.currentSlideIndex - 1 + this.carousel.length) % this.carousel.length;
   }
+
+
 
 }
