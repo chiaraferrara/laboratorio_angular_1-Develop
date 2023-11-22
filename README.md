@@ -27,11 +27,11 @@ Il progetto è stato implementato utilizzando Angular come framework principale.
 
 ## Come Iniziare
 1. **Installazione:**
-   - Assicurarsi di avere Node.js e npm installati.
+   - Assicurarsi di avere [Node.js e npm installati][1].
    - Eseguire `npm install` per installare le dipendenze del progetto.
 
 2. **Configurazione Firebase:**
-   - Creare un progetto su Firebase e configurare le credenziali.
+   - [Creare un progetto su Firebase e configurare le credenziali][2].
    - Inserire le informazioni di configurazione nel file dell'ambiente (`environment.ts`).
 
 3. **Avvio dell'Applicazione:**
@@ -40,4 +40,8 @@ Il progetto è stato implementato utilizzando Angular come framework principale.
 ## Autori
 
 Progetto realizzato da Chiara Ferrara, Gabriele di Grazia, Alberto Cangialosi, Gianmarco Culò, Massimiliano Corsini, Fatima Cangialosi e Stefano Cammarata.
+
+[1]: https://kinsta.com/blog/how-to-install-node-js/
+[2]: https://medium.com/webeetle/primi-passi-con-firebase-6622e71e5abc#:~:text=Creare%20un%20progetto%20Firebase%20%C3%A8,poco%20Firebase%20ha%20rimosso%20il
+
 
