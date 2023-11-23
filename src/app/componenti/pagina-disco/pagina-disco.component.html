@@ -43,18 +43,33 @@
 	</div>
   </div> -->
 
-  <div *ngIf="album | async as albumData; else loading">
-	<h2>{{ albumData.title }}</h2>
-	<p>Artist: {{ albumData.artist }}</p>
-	<p>Genre: {{ albumData.genre }}</p>
-	<img [src]="albumData.coverUrl" alt="Album Cover">
-	
-	<h3>Songs</h3>
-	<ul>
-	  <li *ngFor="let song of albumData.songs">
-		{{ song.title }} - {{ song.artist }}
-	  </li>
-	</ul>
+  <div *ngIf="albumList != null ; else loading">
+	<div *ngFor="let i of albumList">
+  <div class="overflow-hidden rounded-lg shadow transition hover:shadow-lg w-5/6 flex items-center" style="margin:auto" *ngIf="i.id == id">
+	<img [attr.src]="i.coverUrl" class="w-80 w-full object-cover"
+	/>
+  
+	<div class="bg-white p-4 sm:p-6">
+	  <time datetime="2022-10-10" class="block text-xs text-gray-500">
+		{{i.artist}}
+	  </time>
+  
+	  <a href="#">
+		<h3 class="mt-0.5 text-lg text-gray-900">
+		  {{i.title}}
+		</h3>
+	  </a>
+  <h5>{{i.genre}}</h5>
+	  <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+		
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
+		dolores, possimus pariatur animi temporibus nesciunt praesentium dolore
+		sed nulla ipsum eveniet corporis quidem, mollitia itaque minus soluta,
+		voluptates neque explicabo tempora nisi culpa eius atque dignissimos.
+		Molestias explicabo corporis voluptatem?
+	  </p>
+	</div>
+</div></div>
   </div>
   
   <ng-template #loading>
