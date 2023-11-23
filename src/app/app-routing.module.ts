@@ -9,17 +9,18 @@ import { PageInsertDiskComponent } from "./componenti/page-insert-disk/page-inse
 import { LoginMaterialComponent } from "./componenti/login-material/login-material.component";
 import { DashboardComponent } from "./componenti/dashboard/dashboard.component";
 import { RegistrazioneComponent } from "./componenti/registrazione/registrazione.component";
+import { AboutusComponent } from "./componenti/aboutus/aboutus.component";
 // import { AuthGuard } from "./auth.guard";
 
 const routes: Routes = [
 	{ path: "", component: TabComponent, pathMatch: "full"  },
 	{ path: "preferiti", component: PaginaPreferitiComponent},
-	{ path: "page" , component: PaginaDiscoComponent},
+	{ path: 'album', component: PaginaDiscoComponent },
 	{ path: "login", component: LoginMaterialComponent},
 	{ path: 'dashboard', component: DashboardComponent},
 	{ path: "add-disk", component: PageInsertDiskComponent },
 	{ path: "registrati", component: RegistrazioneComponent},
-	{ path: 'dashboard', component: DashboardComponent},	
+	{ path: 'about', component: AboutusComponent},	
 	// QUESTA WILDCARD DEVE ESSERE L'ULTIMA DI DEFAULT
 	{ path: "**", component: PageNotFoundComponent },
 ];
