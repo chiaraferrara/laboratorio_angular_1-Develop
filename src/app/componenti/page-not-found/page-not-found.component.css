@@ -1,3 +1,9 @@
-img {
+div.img-center {
 	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+img.img-not-found {
+	width: 60%;
 }
