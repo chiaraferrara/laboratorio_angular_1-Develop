@@ -34,11 +34,34 @@
 </div>
 <app-commenti></app-commenti> -->
 
-<div class="card">
+<!-- <div class="card">
 	<h5 class="card-header">{{id}}</h5>
 	<div class="card-body">
 	  <h5 class="card-title">{{artist}}</h5>
 	  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
 	  <a href="#" class="btn btn-primary">Go somewhere</a>
 	</div>
+  </div> -->
+
+  <div *ngIf="album | async as albumData; else loading">
+	<h2>{{ albumData.title }}</h2>
+	<p>Artist: {{ albumData.artist }}</p>
+	<p>Genre: {{ albumData.genre }}</p>
+	<img [src]="albumData.coverUrl" alt="Album Cover">
+	
+	<h3>Songs</h3>
+	<ul>
+	  <li *ngFor="let song of albumData.songs">
+		{{ song.title }} - {{ song.artist }}
+	  </li>
+	</ul>
   </div>
+  
+  <ng-template #loading>
+	<div class="card" style="width: 50%; margin-top:6%">
+		<div class="card-body">
+		  Impossibile trovare l'album...
+		</div>
+	  </div>
+  </ng-template>
+  

@@ -101,8 +101,8 @@ getAlbums(): Observable<any[]> {
     
 
 getAlbumDetails(albumId: string) {
-  return this.db.object(`/albums/${albumId}`).valueChanges();
-}
+    return this.db.object(`/albums/${albumId}`).valueChanges();
+  }
 
   logout() {
     this.firebaseAuth.signOut().then( () => {

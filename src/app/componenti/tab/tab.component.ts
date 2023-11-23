@@ -9,7 +9,7 @@ import { FirebaseService } from 'src/app/servizi/firebase.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Song } from 'src/app/song';
 import { UserService } from 'src/app/servizi/user.service';
-
+import { Observable } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { map } from "rxjs/operators";
 import { Subject } from 'rxjs';
@@ -141,6 +141,7 @@ export class TabComponent implements OnInit {
 
   // }
 
+
   @Output() sendId = new EventEmitter<string>();
 
   sendInfo(albumId: string) {
@@ -149,6 +150,8 @@ export class TabComponent implements OnInit {
     console.log("ID passato a sendID:", albumId);
     this.router.navigateByUrl(`/album/${albumId}`);
   }
+
+  
   paginazione() {
     const indiceInizio = this.paginaCorrente * this.itemsPerPage; //rappresenta l'indice della pag. corrente = 0 e numero di album da visualizzare = 6
     const indiceFine = indiceInizio + this.itemsPerPage;

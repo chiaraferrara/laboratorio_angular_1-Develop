@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { FirebaseService } from './firebase.service';
 import { AngularFirestore  } from '@angular/fire/compat/firestore';
+import { BehaviorSubject } from 'rxjs';
+import { Song } from '../song';
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,54 +19,64 @@ export class AlbumsService {
     'assets/carosello/carosello1.png',
     'assets/carosello/carosello2.png'
 
+
   ];
   sendTitle = new Subject<string>();
-
   currentSlideIndex: number = 0;
   direction: number = 0;
   currentGenre: String = 'All';
 
   public albums !: any[];
 
+  private albumInfoSource = new BehaviorSubject<Song | null>(null);
+  albumInfo$ = this.albumInfoSource.asObservable();
+
+  setAlbumInfo(albumInfo: Song | null) {
+    this.albumInfoSource.next(albumInfo);
+  }
+
+
  
   getAlbumDetail(albumId: string): Observable<any> {
      return this.afirestore.collection('albums').doc(albumId).valueChanges();
  }
 
+ getAlbumInfoById(albumId: string): Observable<Song | null> {
+  const albumDoc = this.afirestore.collection('albums').doc(albumId);
 
-//  async getAlbumDetails(albumId : string): Promise<any> {
-//   try {
-//     const albumDetails = await this.afirestore.collection('albums').doc(albumId).valueChanges().toPromise();
-//     console.log("Album details received:", albumDetails);
-//     return albumDetails;
-//   } catch (error) {
-//     console.error("Error while retrieving album details:", error);
-//     throw error;
-//   }
-// }
-
-getAlbumDetails(albumId: string): Observable<any> {
-  return this.afirestore.collection('albums').doc(albumId).valueChanges();
+  return albumDoc.valueChanges().pipe(
+    map((album) => {
+      if (album) {
+        
+        return album as Song;
+      } else {
+       
+        return null;
+      }
+    })
+  ) as Observable<Song | null>;
 }
+
+
+
+ async getAlbumDetails(albumId : string): Promise<any> {
+  try {
+    const albumDetails = await this.afirestore.collection('albums').doc(albumId).valueChanges().toPromise();
+    console.log("Dettaglu album: ", albumDetails);
+    return albumDetails;
+  } catch (error) {
+    console.error("Errore nel ricevere i dettagli dell'album", error);
+    throw error;
+  }
+}
+
+// getAlbumDetails(albumId: string): Observable<any> {
+//   return this.afirestore.collection('albums').doc(albumId).valueChanges();
+// }
 
 getAllAlbums(): Observable<any[]> {
   return this.afirestore.collection('albums').valueChanges();
 }
-
-// TENTATIVO
-selectedAlbum: any;
-
-  setSelectedAlbum(album: any) {
-    this.selectedAlbum = album;
-  }
-
-  getSelectedAlbum() {
-    return this.selectedAlbum;
-  }
-
-  getFavouriteAlbums(uid: string) {
-    return this.afirestore.collection(`users/${uid}/favorites`).valueChanges();
-  }
 
   rimuoviAlbumPreferito(userId: string, albumId: string) {
     this.afirestore.collection('users').doc(userId).get().subscribe(userDoc => {
@@ -102,7 +115,5 @@ selectedAlbum: any;
     this.currentSlideIndex =
       (this.currentSlideIndex - 1 + this.carousel.length) % this.carousel.length;
   }
-
-
 
 }
