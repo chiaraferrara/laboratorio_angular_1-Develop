@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { FirebaseService } from './firebase.service';
 import { AngularFirestore  } from '@angular/fire/compat/firestore';
+import { BehaviorSubject } from 'rxjs';
+import { Song } from '../song';
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,23 +19,64 @@ export class AlbumsService {
     'assets/carosello/carosello1.png',
     'assets/carosello/carosello2.png'
 
+
   ];
   sendTitle = new Subject<string>();
-
   currentSlideIndex: number = 0;
   direction: number = 0;
   currentGenre: String = 'All';
 
   public albums !: any[];
 
- 
-  getAlbumDetails(albumId: string): Observable<any> {
-    return this.afirestore.collection('albums').doc(albumId).valueChanges();
+  private albumInfoSource = new BehaviorSubject<Song | null>(null);
+  albumInfo$ = this.albumInfoSource.asObservable();
+
+  setAlbumInfo(albumInfo: Song | null) {
+    this.albumInfoSource.next(albumInfo);
   }
 
-  getFavouriteAlbums(uid: string) {
-    return this.afirestore.collection(`users/${uid}/favorites`).valueChanges();
+
+ 
+  getAlbumDetail(albumId: string): Observable<any> {
+     return this.afirestore.collection('albums').doc(albumId).valueChanges();
+ }
+
+ getAlbumInfoById(albumId: string): Observable<Song | null> {
+  const albumDoc = this.afirestore.collection('albums').doc(albumId);
+
+  return albumDoc.valueChanges().pipe(
+    map((album) => {
+      if (album) {
+        
+        return album as Song;
+      } else {
+       
+        return null;
+      }
+    })
+  ) as Observable<Song | null>;
+}
+
+
+
+ async getAlbumDetails(albumId : string): Promise<any> {
+  try {
+    const albumDetails = await this.afirestore.collection('albums').doc(albumId).valueChanges().toPromise();
+    console.log("Dettaglu album: ", albumDetails);
+    return albumDetails;
+  } catch (error) {
+    console.error("Errore nel ricevere i dettagli dell'album", error);
+    throw error;
   }
+}
+
+// getAlbumDetails(albumId: string): Observable<any> {
+//   return this.afirestore.collection('albums').doc(albumId).valueChanges();
+// }
+
+getAllAlbums(): Observable<any[]> {
+  return this.afirestore.collection('albums').valueChanges();
+}
 
   rimuoviAlbumPreferito(userId: string, albumId: string) {
     this.afirestore.collection('users').doc(userId).get().subscribe(userDoc => {

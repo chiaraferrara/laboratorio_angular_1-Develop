@@ -33,4 +33,50 @@
 	>
 </div>
 <app-commenti></app-commenti> -->
-<h1>{{ album.title }}</h1>
+
+<!-- <div class="card">
+	<h5 class="card-header">{{id}}</h5>
+	<div class="card-body">
+	  <h5 class="card-title">{{artist}}</h5>
+	  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+	  <a href="#" class="btn btn-primary">Go somewhere</a>
+	</div>
+  </div> -->
+
+  <div *ngIf="albumList != null ; else loading">
+	<div *ngFor="let i of albumList">
+  <div class="overflow-hidden rounded-lg shadow transition hover:shadow-lg w-5/6 flex items-center" style="margin:auto" *ngIf="i.id == id">
+	<img [attr.src]="i.coverUrl" class="w-80 w-full object-cover"
+	/>
+  
+	<div class="bg-white p-4 sm:p-6">
+	  <time datetime="2022-10-10" class="block text-xs text-gray-500">
+		{{i.artist}}
+	  </time>
+  
+	  <a href="#">
+		<h3 class="mt-0.5 text-lg text-gray-900">
+		  {{i.title}}
+		</h3>
+	  </a>
+  <h5>{{i.genre}}</h5>
+	  <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+		
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
+		dolores, possimus pariatur animi temporibus nesciunt praesentium dolore
+		sed nulla ipsum eveniet corporis quidem, mollitia itaque minus soluta,
+		voluptates neque explicabo tempora nisi culpa eius atque dignissimos.
+		Molestias explicabo corporis voluptatem?
+	  </p>
+	</div>
+</div></div>
+  </div>
+  
+  <ng-template #loading>
+	<div class="card" style="width: 50%; margin-top:6%">
+		<div class="card-body">
+		  Impossibile trovare l'album...
+		</div>
+	  </div>
+  </ng-template>
+  
