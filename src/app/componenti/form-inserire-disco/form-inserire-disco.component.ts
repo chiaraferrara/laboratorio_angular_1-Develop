@@ -14,13 +14,13 @@ import { FormsModule } from "@angular/forms";
 	imports: [MatFormFieldModule, MatInputModule, MatIconModule, FormsModule],
 })
 export class FormInserireDiscoComponent {
-	song: Song = new Song(0, '','', '', '');
+	song: Song = new Song(0, '','', '', '', '');
 
 	constructor(private songService: SongService){}
 
 	addSong() {
 		this.songService.addSong(this.song).then(() => {
-		  this.song = new Song(0, '', '','', '');
+		  this.song = new Song(0, '', '','', '', '');
 		});
 	  }
 

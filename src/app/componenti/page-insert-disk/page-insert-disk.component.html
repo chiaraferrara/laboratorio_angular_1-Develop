@@ -16,35 +16,26 @@
 				/>
 			</div>
 			<div class="col p-4 d-flex flex-column position-static">
-				<!-- <strong
-					class="d-inline-block mb-2 text-primary-emphasis"
-					style="font-size: 24px"
-					>{{ disco.title }}</strong
-				> -->
+				
 				<h3 class="d-inline-block mb-2 text-primary-emphasis">
 					{{ "album.title" }}
 				</h3>
-				<!-- <h3 class="mb-0">{{ disco.artist }}</h3> -->
+				
 				<h3 class="mb-0">{{ "album.artist" }}</h3>
 				<div class="mb-1 text-body-secondary">
-					<!-- {{ disco.year }}<br /> -->
-					<!-- {{ disco.genre }} -->
+					
 					{{ "album.year" }}<br />
 					{{ "disco.genre" }}
 				</div>
 				<li class="list-group-item">
-					<!-- <ng-template [ngIf]="disco.songs.length == 1">1 brano</ng-template> -->
-					<!-- <ng-template [ngIf]="disco.songs.length != 1" -->
-					<!-- >{{ disco.songs.length }} brani</ng-template -->
 					{{ "album.numero_canzoni" }}
 				</li>
-				<!-- <div *ngFor="let song of disco.songs"> -->
 				<li>{{ "song.title" }}</li>
-				<!-- </div> -->
+				
 			</div>
 		</div>
+		
 	</div>
-	<!-- </ng-container> -->
-	<!-- </div> -->
+
 	<app-form-inserire-disco></app-form-inserire-disco>
 </div>

@@ -1,82 +1,40 @@
-<!-- <div *ngFor="let disco of servizio.albums" class="cicloFor">
-	<ng-container *ngIf="disco.title === broadcastValue">
-		<div class="col-md-6">
-			<div
-				class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
-			>
-				<div class="col-auto d-none d-lg-block">
-					<img [attr.src]="disco.img" class="card-img-top" />
-				</div>
-				<div class="col p-4 d-flex flex-column position-static">
-					<strong
-						class="d-inline-block mb-2 text-primary-emphasis"
-						style="font-size: 24px"
-						>{{ disco.title }}</strong
-					>
-					<h3 class="mb-0">{{ disco.artist }}</h3>
-					<div class="mb-1 text-body-secondary">
-						{{ disco.year }}<br />
-						{{ disco.genre }}
-					</div>
-					<li class="list-group-item">
-						<ng-template [ngIf]="disco.songs.length == 1">1 brano</ng-template>
-						<ng-template [ngIf]="disco.songs.length != 1"
-							>{{ disco.songs.length }} brani</ng-template
-						>
-					</li>
-					<div *ngFor="let song of disco.songs">
-						<li>{{ song.title }}</li>
-					</div>
+
+<div *ngIf="albumList != null ; else loading">
+	<div *ngFor="let i of albumList">
+		<div class="overflow-hidden rounded-lg shadow transition hover:shadow-lg w-5/6 flex items-center"
+			style="margin:auto; margin-top: 2%;" *ngIf="i.id == id">
+			<img [attr.src]="i.coverUrl" class="h-64 w-64 w-full object-cover" />
+
+			<div class="bg-white p-4 sm:p-6">
+				<time datetime="2022-10-10" class="block text-xs text-gray-500">
+					{{i.artist}}
+				</time>
+
+				<a href="#">
+					<h3 class="mt-0.5 text-lg text-gray-900">
+						{{i.title}}
+					</h3>
+				</a>
+				<h5>{{i.genre}}</h5>
+				<p class="mt-2 text-sm/relaxed text-gray-500">
+
+					{{i.description}}
+
+				</p>
+				<div class="justify-center gap-x-6" style="margin: auto;">
+					<a href="#"
+						class=" bg-gray-950 rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Go
+						back home</a>
 				</div>
 			</div>
-		</div></ng-container
-	>
+		</div>
+	</div>
 </div>
-<app-commenti></app-commenti> -->
 
-<!-- <div class="card">
-	<h5 class="card-header">{{id}}</h5>
-	<div class="card-body">
-	  <h5 class="card-title">{{artist}}</h5>
-	  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-	  <a href="#" class="btn btn-primary">Go somewhere</a>
-	</div>
-  </div> -->
-
-  <div *ngIf="albumList != null ; else loading">
-	<div *ngFor="let i of albumList">
-  <div class="overflow-hidden rounded-lg shadow transition hover:shadow-lg w-5/6 flex items-center" style="margin:auto" *ngIf="i.id == id">
-	<img [attr.src]="i.coverUrl" class="w-80 w-full object-cover"
-	/>
-  
-	<div class="bg-white p-4 sm:p-6">
-	  <time datetime="2022-10-10" class="block text-xs text-gray-500">
-		{{i.artist}}
-	  </time>
-  
-	  <a href="#">
-		<h3 class="mt-0.5 text-lg text-gray-900">
-		  {{i.title}}
-		</h3>
-	  </a>
-  <h5>{{i.genre}}</h5>
-	  <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
-		
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-		dolores, possimus pariatur animi temporibus nesciunt praesentium dolore
-		sed nulla ipsum eveniet corporis quidem, mollitia itaque minus soluta,
-		voluptates neque explicabo tempora nisi culpa eius atque dignissimos.
-		Molestias explicabo corporis voluptatem?
-	  </p>
-	</div>
-</div></div>
-  </div>
-  
-  <ng-template #loading>
+<ng-template #loading>
 	<div class="card" style="width: 50%; margin-top:6%">
 		<div class="card-body">
-		  Impossibile trovare l'album...
+			Impossibile trovare l'album...
 		</div>
-	  </div>
-  </ng-template>
-  
+	</div>
+</ng-template>

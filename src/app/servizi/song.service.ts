@@ -32,6 +32,7 @@ export class SongService {
           artist: song.artist.toUpperCase(),
           genre: song.genre.toUpperCase(),
           coverUrl: song.coverUrl.toUpperCase(),
+          description: song.description,
         });
       });
   }
