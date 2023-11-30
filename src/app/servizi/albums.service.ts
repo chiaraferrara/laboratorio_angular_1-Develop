@@ -14,15 +14,16 @@ export class AlbumsService {
   constructor(private firestore : FirebaseService, private afirestore: AngularFirestore) { }
 
   carousel: string[] = [
-    'assets/carosello/carosello0gif.gif',
+    'assets/carosello/carosello3.png',    
+    'assets/carosello/carosello4.png',
+    'assets/carosello/carosello5.png',
+    // 'assets/carosello/carosello0gif.gif',
     // 'assets/carosello/carosello0.png',
-    'assets/carosello/carosello1.png',
-    'assets/carosello/carosello2.png'
 
 
   ];
   sendTitle = new Subject<string>();
-  currentSlideIndex: number = 0;
+  currentSlideIndex: number = 1;
   direction: number = 0;
   currentGenre: String = 'All';
 

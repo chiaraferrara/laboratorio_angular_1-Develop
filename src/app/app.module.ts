@@ -23,11 +23,12 @@ import { DashboardComponent } from './componenti/dashboard/dashboard.component';
 import { RegistrazioneComponent } from './componenti/registrazione/registrazione.component'
 import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { FormInserireDiscoComponent } from "./componenti/form-inserire-disco/form-inserire-disco.component";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { UserService } from "./servizi/user.service";
 import { ProfilePictureComponent } from './componenti/profile-picture/profile-picture.component';
 import { AboutusComponent } from './componenti/aboutus/aboutus.component';
 import { MatTabsModule } from "@angular/material/tabs";
+import { SearchComponent } from './componenti/search/search.component';
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import { MatTabsModule } from "@angular/material/tabs";
 		PageNotFoundComponent,
 		NavbarComponent,
 		CaroselloComponent, PaginaDiscoComponent, FooterComponent, PaginaPreferitiComponent,
-		CommentiComponent, RegistrazioneComponent, LoginMaterialComponent, PageInsertDiskComponent, DashboardComponent, ProfilePictureComponent, AboutusComponent,TabComponent
+		CommentiComponent, RegistrazioneComponent, LoginMaterialComponent, PageInsertDiskComponent, DashboardComponent, ProfilePictureComponent, AboutusComponent,TabComponent, SearchComponent
 	],
 	imports: [
 		BrowserModule,
@@ -50,7 +51,8 @@ import { MatTabsModule } from "@angular/material/tabs";
 		AngularFireModule.initializeApp(environment.firebaseConfig),
 		AngularFireAuthModule,
 		AngularFirestoreModule,
-		FormsModule
+		FormsModule,
+		ReactiveFormsModule
 	],
 	providers: [AngularFirestore, UserService, TabComponent],
 })

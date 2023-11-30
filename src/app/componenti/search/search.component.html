@@ -1,0 +1,27 @@
+<h1>Works?</h1>
+
+<div>
+  <h2>Looking For Music?</h2>
+  <div>Enter an artist in the search box below to get all list of all theirs songs and albums</div>
+  <div>
+    <input type="text" [formControl]="query" placeholder="Search for Songs...">
+    <i class="search icon"></i>
+  </div>
+</div>
+
+<div *ngIf="results">
+  <div *ngFor="let res of results">
+    <div>
+      <div>
+        <a href="/artist/{{res.id}}">{{res.name}}</a>
+      </div>
+      <div>
+      </div>
+      <div *ngFor="let genre of res.genres">
+        <div>
+          <div>{{genre}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

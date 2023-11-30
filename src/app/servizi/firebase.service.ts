@@ -42,7 +42,15 @@ export class FirebaseService {
       })
   }
 
+  getUserData(userRef: string): Observable<any> {
+    // referenza utente per ottenere i dati dell'utente
+    return this.firestore.doc(userRef).valueChanges();
+  }
 
+  getUserDataFromReference(userRef: any): Observable<any> {
+    return this.firestore.doc(userRef.path).valueChanges();
+    
+  }
 
   registrazione(username: string, email: string, password: string, favorites: string[], avatar: string) {
   // Set the default avatar URL here
@@ -92,7 +100,9 @@ export class FirebaseService {
 }
 
   
-
+getComments(): Observable<any[]> {
+  return this.firestore.collection('albums').valueChanges();
+}
 
 
 getAlbums(): Observable<any[]> {

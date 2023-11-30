@@ -4,7 +4,9 @@
 
 }
 
-
+img{
+    border-radius: 2em;
+}
 .card{
     margin: auto;
     width: 70%;
@@ -29,14 +31,18 @@ strong{
     flex-flow: row wrap;
     align-content: space-between;
     justify-content: flex-start;
-    align-items: baseline;
+    align-items: flex-start;
 }
 
 .comment-list .card-body .comment-text {
     margin-left: 10px;
     flex-grow: 1;
-  }
 
+  }
+  
+  .comment-list{
+    padding-top: 32px;
+  }
   .commentarea{
     margin-left:3.4em;
     padding-top: 0;
@@ -44,4 +50,8 @@ strong{
 
   .comment-form{
     margin-top: 3em;
+  }
+
+  .btn {
+    margin-top: 10px;
   }

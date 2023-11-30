@@ -1,8 +1,19 @@
+<body>
 <div class="carousel">
     
-    <div class="image-container" >
+    <div class="image-container" [class.fade-out]="transitionClass === 'fade-out'">
         <img [src]="currentImage">     
     </div>
-    <button class="prec" (click)="servizio.prevSlide()">&lsaquo;</button>
-    <button class="succ" (click)="servizio.nextSlide()">&rsaquo;</button>
+    <button #prevButton class="prec" (click)="servizio.prevSlide()">&lsaquo;</button>
+    <button #nextButton class="succ" (click)="servizio.nextSlide()">&rsaquo;</button>
   </div>
+
+  <div id="container">
+    <button class="learn-more">
+      <span class="circle" aria-hidden="true">
+        <span class="icon arrow"></span>
+      </span>
+      <span class="button-text">Learn More</span>
+    </button>
+  </div>
+  </body>

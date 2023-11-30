@@ -3,6 +3,37 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css?family=Mukta:700');
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; 
+  /* font-family: Roboto, "Helvetica Neue", sans-serif;  */
+  font-family: 'Mukta', sans-serif;
+    --animation-duration: 0.5s;
+    --animation-curve: ease-in-out;
+    --animation-delay: 0s;
+}
+
+/* div{
+    position: relative;
+}
+div::after{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    animation: reveal var(--animation-duration) var(--animation-delay) var(--animation-curve) forwards;
+
+}
+
+@keyframes reveal {
+    from{
+      left: 0;
+    }
+    to{
+      left: 100%;
+    }
+  } */
