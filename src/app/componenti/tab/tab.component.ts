@@ -142,7 +142,7 @@ export class TabComponent implements OnInit {
   // }
 
 
-  @Output() sendId = new EventEmitter<string>();
+  // @Output() sendId = new EventEmitter<string>();
 
   sendInfo(albumId: string) {
     console.log("Tentativo di inviare ID:", albumId);
